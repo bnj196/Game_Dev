@@ -1,0 +1,70 @@
+import turtle
+
+# Tạo cửa sổ vẽ
+screen = turtle.Screen()
+screen.title("VÕ TIẾN THIỆN")
+screen.bgcolor("lightgreen")  # Màu sắc nền
+
+# Tạo turtle
+pen = turtle.Turtle()
+pen.speed(2.5)  # Tốc độ vẽ
+pen.color("blue")  # Màu chữ
+
+# Tạo viền cho chữ "THIỆN"
+def draw_border():
+    pen.penup()
+    pen.goto(-100, 10)
+    pen.pendown()
+    pen.pensize(3)
+    pen.color("yellow")  # Màu viền
+
+    # Vẽ viền cho "THIỆN"
+    pen.forward(200)
+    pen.backward(400)
+    pen.forward(200)
+    pen.left(90)
+    pen.forward(70)
+    pen.right(90)
+    pen.forward(400)
+    pen.backward(400)
+    pen.forward(200)
+
+# Hiển thị chữ "Võ"
+def draw_vo():
+    pen.penup()
+    pen.goto(-220, 50)
+    pen.pendown()
+    pen.write("VÕ", font=("Arial", 34, "italic"))  # Sử dụng font Comic Sans MS
+
+# Hiển thị chữ "Tiến"
+def draw_tien():
+    pen.penup()
+    pen.goto(-35, -30)
+    pen.pendown()
+    pen.write("TIẾN", font=("Arial", 24, "italic"))  # Sử dụng font Arial in nghiêng
+
+# Animation trước khi hiện chữ "THIỆN"
+def animate_thien():
+    pen.penup()
+    pen.goto(-100, 0)
+    pen.pendown()
+    for _ in range(5):
+        pen.forward(20)
+        pen.backward(20)
+
+# Hiển thị chữ "THIỆN"
+def draw_thien():
+    pen.penup()
+    pen.goto(-160, -200)  # Điều chỉnh vị trí xuống dưới một khoảng cách
+    pen.pendown()
+    pen.write("THIỆN", font=("Arial", 34, "italic"))  # Sử dụng font Comic Sans MS
+
+# Gọi các hàm để vẽ "VÕ TIẾN THIỆN"
+draw_border()
+animate_thien()
+draw_thien()
+draw_vo()
+draw_tien()
+
+# Đóng cửa sổ khi vẽ xong
+turtle.done()
